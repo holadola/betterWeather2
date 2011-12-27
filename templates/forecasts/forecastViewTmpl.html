@@ -1,0 +1,30 @@
+<ul class="single-forecast">
+    <li>
+        <h2><%= forecast_information.city %></h2>
+        <p>
+            <%= forecast_information.forecast_date %>
+        </p>
+    </li>
+    <li>
+        <h3>Current conditions</h3>
+        <ul>
+            <li><img src="http://www.google.com<%= current_conditions.icon %>" alt="weather icon" /></li>
+            <li><%= current_conditions.condition %></li>
+            <li><%= current_conditions.temp_c %></li>
+            <li><%= current_conditions.humidity %></li>
+            <li><%= current_conditions.wind_condition %></li>
+        </ul>
+    </li>
+
+    <% _.each(forecast_conditions, function(forecast){ %>
+    <li>
+        <h3><%= forecast.day_of_week %></h3>
+        <ul>
+            <li><img src="http://www.google.com<%= forecast.icon %>" alt="weather icon" /></li>
+            <li><%= forecast.condition %></li>
+            <li><%= forecast.low %></li>
+            <li><%= forecast.high %></li>
+        </ul>
+    </li>
+    <% }); %>
+</ul>

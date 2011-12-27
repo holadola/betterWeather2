@@ -1,0 +1,5 @@
+<ul>
+    <% _.each(forecasts, function(forecast){ %>
+    <li><%= forecast.get("name") %> - <%= forecast.get("score") %></li>
+    <% }); %>
+</ul>
